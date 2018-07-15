@@ -22,8 +22,9 @@
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
     "@ionic-native/background-mode": "^4.9.0",
+    "@ionic-native/battery-status": "^4.9.2",
     "@ionic-native/core": "4.7.0",
-    "@ionic-native/media": "^4.7.0",
+    "@ionic-native/gyroscope": "^4.9.2",
     "@ionic-native/native-audio": "^4.9.0",
     "@ionic-native/splash-screen": "4.7.0",
     "@ionic-native/status-bar": "^4.7.0",
@@ -31,11 +32,11 @@
     "cordova-android": "7.0.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-background-mode": "git+https://github.com/katzer/cordova-plugin-background-mode.git",
+    "cordova-plugin-battery-status": "^2.0.2",
     "cordova-plugin-device": "^2.0.2",
-    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-gyroscope": "^0.1.4",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
-    "cordova-plugin-media": "^5.0.2",
     "cordova-plugin-nativeaudio": "~3.0.9",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
@@ -59,16 +60,15 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-media": {
-        "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
-      },
       "cordova-plugin-nativeaudio": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-background-mode": {}
+      "cordova-plugin-battery-status": {},
+      "cordova-plugin-background-mode": {},
+      "cordova-plugin-gyroscope": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

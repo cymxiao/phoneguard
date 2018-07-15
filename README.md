@@ -23,3 +23,9 @@ ionic cordova run ios --prod --release
 ionic cordova run android --prod --release
 
 ionic cordova run ios --prod --release
+
+
+debug and consolelogs
+
+ionic cordova build ios   --livereload --consolelogs
+ionic cordova run ios   --livereload --consolelogs --serverlogs

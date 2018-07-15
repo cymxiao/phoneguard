@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.cdtech.timer" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>戒手机</name>
-    <description>一款防止长时间使用手机的软件.</description>
+<widget id="com.cdtech.phoneguard" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>phoneguard</name>
+    <description>手机卫士，手机防盗</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -81,12 +81,13 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
-    <plugin name="cordova-plugin-media" spec="^5.0.2">
-        <variable name="KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE" value="NO" />
-    </plugin>
     <plugin name="cordova-plugin-nativeaudio" spec="~3.0.9" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-battery-status" spec="^2.0.2" />
     <plugin name="cordova-plugin-background-mode" spec="https://github.com/katzer/cordova-plugin-background-mode" />
+    <allow-navigation href="http://192.168.0.110:8101" />
+    <allow-navigation href="http://192.168.0.110:8100" />
+    <engine name="android" spec="7.0.0" />
     <engine name="ios" spec="~4.5.4" />
+    <plugin name="cordova-plugin-gyroscope" spec="^0.1.4" />
 </widget>
