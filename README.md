@@ -29,3 +29,4 @@ debug and consolelogs
 
 ionic cordova build ios   --livereload --consolelogs
 ionic cordova run ios   --livereload --consolelogs --serverlogs
+ionic cordova run android   --livereload --consolelogs --serverlogs

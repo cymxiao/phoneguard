@@ -3,7 +3,7 @@
     <name>phoneguard</name>
     <description>手机卫士，手机防盗</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.110:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -87,7 +87,8 @@
     <plugin name="cordova-plugin-background-mode" spec="https://github.com/katzer/cordova-plugin-background-mode" />
     <allow-navigation href="http://192.168.0.110:8101" />
     <allow-navigation href="http://192.168.0.110:8100" />
-    <engine name="android" spec="7.0.0" />
-    <engine name="ios" spec="~4.5.4" />
     <plugin name="cordova-plugin-gyroscope" spec="^0.1.4" />
+    <plugin name="cordova-plugin-sensors" spec="https://github.com/fabiorogeriosj/cordova-plugin-sensors.git" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>

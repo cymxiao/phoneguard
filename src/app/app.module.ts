@@ -10,10 +10,13 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { Gyroscope  } from '@ionic-native/gyroscope';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { Sensors } from '@ionic-native/sensors';
+
 import { LockScreenComponent,LockScreenModule } from  'ionic-simple-lockscreen';
 
 import { MyApp } from './app.component';
 //import { HomePage } from '../pages/home/home';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { MyApp } from './app.component';
     BatteryStatus,
     NativeAudio,
     Gyroscope,//deviceGyroscope,
+    Sensors,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
