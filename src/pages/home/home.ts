@@ -81,15 +81,35 @@ export class HomePage {
 
 
   private load_Sensors() {
-    this.sensors.enableSensor(TYPE_SENSOR.PROXIMITY);
+    // //this.sensors.enableSensor(TYPE_SENSOR.PROXIMITY).then( () => {
+    //   this.sensors.enableSensor("PROXIMITY").then( () => {
+    //   console.log('start Sensor enabled' );
+    //   setInterval(() => { 
+    //     this.sensors.getState().then((values) => {
+    //       console.dir(values[0]);
+    //       if (values && values[0]) {
+    //         this.proximity = values[0];
+    //       }
+    //     });
+    //   }, 1000);
+    // }).catch( (e) =>{
+    //   console.log('load_Sensors error');
+    //   console.dir(e);
+    // });
+    //this.sensors.enableSensor("PROXIMITY");
+     
     setInterval(() => { 
+      this.sensors.enableSensor("PROXIMITY").then( (x) => { 
+        console.dir(x);  
+      }); 
       this.sensors.getState().then((values) => {
-        console.dir(values);
+        console.dir(values[0]);
         if (values && values[0]) {
           this.proximity = values[0];
         }
       });
-    }, 300);
+    }, 1000);
+ 
   }
 
 

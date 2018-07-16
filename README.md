@@ -29,4 +29,7 @@ debug and consolelogs
 
 ionic cordova build ios   --livereload --consolelogs
 ionic cordova run ios   --livereload --consolelogs --serverlogs
+
+
+use following command,  then open android studio, if changes happen, it would work immediately.
 ionic cordova run android   --livereload --consolelogs --serverlogs
