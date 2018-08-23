@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { LockScreenComponent } from 'ionic-simple-lockscreen';
-import { BatteryStatus } from '@ionic-native/battery-status';
+//import { BatteryStatus } from '@ionic-native/battery-status';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope';
 import { Sensors, TYPE_SENSOR } from '@ionic-native/sensors';
@@ -16,9 +16,7 @@ import { Sensors, TYPE_SENSOR } from '@ionic-native/sensors';
 })
 export class HomePage {
 
-  x: any;
-  y: any;
-  z: any;
+ 
   testDataTitle: string;
 
   public proximity: number;
@@ -34,8 +32,8 @@ export class HomePage {
     private navParams: NavParams,
     private platform: Platform,
     private bgMode: BackgroundMode,
-    private batteryStatus: BatteryStatus,
-    public gyroscope: Gyroscope,
+    //private batteryStatus: BatteryStatus,
+    //public gyroscope: Gyroscope,
     private sensors: Sensors,
     private nativeAudio: NativeAudio) {
     //console.dir(this.platform);
@@ -43,72 +41,49 @@ export class HomePage {
       this.bgMode.enable();
 
     }
-    this.testDataTitle = '测试gyroscope';
+    this.testDataTitle = '测试 proximity';
 
   }
 
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad called');
-    this.load_Gyroscope();
+    //console.log('ionViewDidLoad called'); 
     if(this.platform.is('android')){
       this.load_Sensors();
     }
   }
-
-  private load_Gyroscope() {
-    let options: GyroscopeOptions = {
-      frequency: 1000
-    };
-
-    if (this.gyroscope) {
-      this.platform.ready().then(() => {
-        this.gyroscope.getCurrent(options)
-          .then((orientation: GyroscopeOrientation) => {
-            this.x = orientation.x;
-            this.y = orientation.y;
-            this.z = orientation.z;
-            console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);
-          })
-          .catch((ex) => {
-            console.dir(ex);
-          });
-      });
-    } else {
-      this.x = 'no gyroscope';
-    }
-  }
+ 
 
 
   private load_Sensors() {
-    // //this.sensors.enableSensor(TYPE_SENSOR.PROXIMITY).then( () => {
-    //   this.sensors.enableSensor("PROXIMITY").then( () => {
-    //   console.log('start Sensor enabled' );
-    //   setInterval(() => { 
-    //     this.sensors.getState().then((values) => {
-    //       console.dir(values[0]);
-    //       if (values && values[0]) {
-    //         this.proximity = values[0];
-    //       }
-    //     });
-    //   }, 1000);
-    // }).catch( (e) =>{
-    //   console.log('load_Sensors error');
-    //   console.dir(e);
-    // });
-    //this.sensors.enableSensor("PROXIMITY");
+    this.sensors.enableSensor(TYPE_SENSOR.PROXIMITY).then( () => {
+      //this.sensors.enableSensor("PROXIMITY").then( () => {
+      console.log('start Sensor enabled' );
+      setInterval(() => { 
+        this.sensors.getState().then((values) => {
+          console.dir(values[0]);
+          if (values && values[0]) {
+            this.proximity = values[0];
+          }
+        });
+      }, 1000);
+    }).catch( (e) =>{
+      console.log('load_Sensors error');
+      console.dir(e);
+    });
+  
      
-    setInterval(() => { 
-      this.sensors.enableSensor("PROXIMITY").then( (x) => { 
-        console.dir(x);  
-      }); 
-      this.sensors.getState().then((values) => {
-        console.dir(values[0]);
-        if (values && values[0]) {
-          this.proximity = values[0];
-        }
-      });
-    }, 1000);
+    // setInterval(() => { 
+    //   this.sensors.enableSensor("PROXIMITY").then( (x) => { 
+    //     console.dir(x);  
+    //   }); 
+    //   this.sensors.getState().then((values) => {
+    //     console.dir(values[0]);
+    //     if (values && values[0]) {
+    //       this.proximity = values[0];
+    //     }
+    //   });
+    // }, 1000);
  
   }
 

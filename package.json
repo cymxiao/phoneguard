@@ -33,9 +33,7 @@
     "cordova-android": "7.0.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-background-mode": "git+https://github.com/katzer/cordova-plugin-background-mode.git",
-    "cordova-plugin-battery-status": "^2.0.2",
     "cordova-plugin-device": "^2.0.2",
-    "cordova-plugin-gyroscope": "^0.1.4",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-nativeaudio": "~3.0.9",
@@ -64,9 +62,7 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-nativeaudio": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-battery-status": {},
       "cordova-plugin-background-mode": {},
-      "cordova-plugin-gyroscope": {},
       "cordova-plugin-sensors": {}
     },
     "platforms": [
