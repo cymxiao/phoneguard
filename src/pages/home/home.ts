@@ -17,10 +17,11 @@ import { Sensors, TYPE_SENSOR } from '@ionic-native/sensors';
 export class HomePage {
 
  
-  testDataTitle: string;
-
+  testDataTitle: string; 
   public proximity: number;
 
+  step1:string ;
+  step2:string ;
 
   timeInit: number = 0;
   openTimes: number = 0;
@@ -32,11 +33,9 @@ export class HomePage {
     private navParams: NavParams,
     private platform: Platform,
     private bgMode: BackgroundMode,
-    //private batteryStatus: BatteryStatus,
-    //public gyroscope: Gyroscope,
+   
     private sensors: Sensors,
-    private nativeAudio: NativeAudio) {
-    //console.dir(this.platform);
+    private nativeAudio: NativeAudio) { 
     if (!this.bgMode.isEnabled()) {
       this.bgMode.enable();
 
@@ -47,10 +46,11 @@ export class HomePage {
 
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad called'); 
-    if(this.platform.is('android')){
-      this.load_Sensors();
-    }
+    console.log('ionViewDidLoad called'); 
+    this.openLockscreen();
+    //if(this.platform.is('android')){ 
+    this.load_Sensors();
+    //}
   }
  
 
@@ -59,16 +59,19 @@ export class HomePage {
     this.sensors.enableSensor(TYPE_SENSOR.PROXIMITY).then( () => {
       //this.sensors.enableSensor("PROXIMITY").then( () => {
       console.log('start Sensor enabled' );
+      this.step1 = 'start Sensor enabled';
       setInterval(() => { 
         this.sensors.getState().then((values) => {
+          this.step2 = 'start set setInterval';
           console.dir(values[0]);
           if (values && values[0]) {
             this.proximity = values[0];
           }
         });
-      }, 1000);
+      }, 5000);
     }).catch( (e) =>{
       console.log('load_Sensors error');
+      this.step1 = 'load_Sensors error';
       console.dir(e);
     });
   
